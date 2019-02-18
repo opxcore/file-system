@@ -1,0 +1,25 @@
+{
+    "name": "opxcore/file-system-local",
+    "description": "The OpxCore file system driver.",
+    "type": "library",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/opxcore/file-system-local/issues",
+        "source": "https://github.com/opxcore/file-system-local"
+    },
+    "authors": [
+        {
+            "name": "Lozovoy Vyacheslav",
+            "email": "opxcore@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.1.3",
+        "opxcore/interfaces": "^0.1."
+    },
+    "autoload": {
+        "psr-4": {
+            "OpxCore\\FileSystem\\": "src"
+        }
+    }
+}
