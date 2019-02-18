@@ -158,4 +158,20 @@ class FileSystemLocal implements FileSystemInterface
     {
         return file_put_contents($filename, $data, $flags, $context);
     }
+
+    /**
+     * Makes directory.
+     *
+     * @param  string $pathname
+     * @param  int $mode
+     * @param  bool $recursive
+     * @param  resource|null $context
+     *
+     * @return  bool
+     */
+    public function mkdir(string $pathname, int $mode = 0777, bool $recursive = false, $context = null): bool
+    {
+        // Prevent race condition of mkdir
+        return mkdir($pathname, $mode, $recursive, $context) && is_dir($pathname);
+    }
 }
